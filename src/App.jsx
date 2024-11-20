@@ -1,12 +1,12 @@
-import HelloWorld from "./components/HelloWorld"
+import react from 'react';
+import ScrollContainer from './components/ScrollContainer';
 
 function App() {
 
   return (
-    <>
-      <HelloWorld />
-    </>
-  )
+    <ScrollContainer/>
+    
+  );
 }
 
 export default App
