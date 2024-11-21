@@ -20,7 +20,11 @@ const ParallaxSection = ({ children, date, bgColor, timelineColor }) => {
       }}
     >
       <TimeLine color={timelineColor} />
-      <DateMarker date={date} scrollYProgress={scrollYProgress} color={timelineColor} />
+      <DateMarker
+        date={date}
+        scrollYProgress={scrollYProgress}
+        color={timelineColor}
+      />
       <motion.div
         ref={ref}
         initial={{ opacity: 0, y: 50 }}
