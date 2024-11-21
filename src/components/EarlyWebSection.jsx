@@ -14,7 +14,6 @@ const EarlyWebSection = () => {
     <ScopedWrapper classes={classes}>
       <ParallaxSection date="1990s" bgColor="#ffffff" timelineColor="#000000">
         <div id="early-web" className="container py-4">
-          <h1>Early Web</h1>
           <button className="btn btn-primary" onClick={toggleContentVisibility}>
             {isContentVisible ? "Hide content" : "Show Content"}
           </button>
