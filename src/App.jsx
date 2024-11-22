@@ -5,6 +5,7 @@ import EarlyWebSection from "./components/EarlyWebSection";
 import FlatDesignSection from "./components/FlatDesignSection";
 import NeumorphismSection from "./components/NeumorphismSection";
 import SkeuomorphismSection from "./components/SkeuomorphismSection";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <FlatDesignSection />
       <DarkModeSection />
       <NeumorphismSection />
+<Footer/>
     </>
   );
 }

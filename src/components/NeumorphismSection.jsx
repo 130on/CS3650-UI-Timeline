@@ -11,6 +11,7 @@ const NeumorphismSection = () => {
             Neumorphism
           </h1>
           <button className="btn btn-primary">Button</button>
+          
         </div>
       </ParallaxSection>
     </ScopedWrapper>

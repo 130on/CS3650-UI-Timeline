@@ -14,6 +14,7 @@ const DarkModeSection = () => {
           <h1 className="h1 text-white">Dark Mode</h1>
           <button className="btn btn-primary">Button</button>
         </div>
+
       </ParallaxSection>
     </ScopedWrapper>
   );

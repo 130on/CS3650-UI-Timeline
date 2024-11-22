@@ -28,6 +28,7 @@ const EarlyWebSection = () => {
             </div>
           )}
         </div>
+
       </ParallaxSection>
     </ScopedWrapper>
   );
