@@ -16,7 +16,7 @@ function App() {
       <FlatDesignSection />
       <DarkModeSection />
       <NeumorphismSection />
-<Footer/>
+      <Footer/>
     </>
   );
 }

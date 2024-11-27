@@ -9,10 +9,22 @@ ul > li {
 
 .custom-modal {
   position: relative !important;
-  bottom: 25% !important;
+  top: 50% !important;
   right: 25% !important;
-  transform: translateY(-50%) !important;
-   z-index: 1050 !important; 
+  z-index: 1050 !important; 
+} 
+
+.custom-modal p {
+  text-align: justify; 
+  line-height: 1.5;    
+}
+
+
+.custom-modal img {
+  max-width: 100%; 
+  max-height: 50%; 
+  display: block; 
+
 }
 
 .fotterFloat {
@@ -26,4 +38,46 @@ ul > li {
   padding: 10px; 
   z-index: 1000; 
   font-size: 14px; 
+}
+/* The google overlay image styles */
+.overlay-image {
+  position: fixed;  
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; 
+}
+
+.overlay-image img {
+  max-width: 90%;  
+  max-height: 90%; 
+  object-fit: contain; 
+}
+
+.google-button {
+  padding: 10px 20px;
+  background-color: #17a2b8;
+  color: white;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  top: 10px;             
+  left: 50%;             
+  transform: translateY(-500%);  
+  background: linear-gradient(45deg, #4285F4, #DB4437, #F4B400, #0F9D58);
+}
+
+.google-btn {
+  padding: 10px 20px;   
+  border-radius: 5px;    
+  background-color: #17a2b8;  
+  color: white;          
+  border: none;         
+  font-weight: bold;    
 }

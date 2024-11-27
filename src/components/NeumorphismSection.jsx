@@ -7,16 +7,25 @@ import { motion, AnimatePresence } from "motion/react";
 const NeumorphismSection = () => {
   // State to manage visibility of the paragraph and modal
   const [isVisible, setIsVisible] = useState(false);
+  // State to toggle fun fact modal visibility
   const [showModal, setShowModal] = useState(false);
+  // State to toggle image visibility
+  const [showImage, setShowImage] = useState(false); 
 
   // Function to toggle the paragraph and modal visibility
   const toggleParagraph = () => setIsVisible(!isVisible);
+  // Function to toggle the modal visibility
   const toggleModal = () => setShowModal(!showModal);
+  // Function to toggle the image visibility
+  const toggleImage = () => setShowImage(!showImage);
 
   return (
     <ScopedWrapper classes={classes}>
       <ParallaxSection date="2020s" bgColor="#D9E3F1" timelineColor="#485785">
         <div id="neumorphism" className="container py-4">
+        <button className="google-btn google-button" onClick={toggleImage}>
+            {showImage ? "Ungoogle it" : "Google it"}
+          </button>
           <h1 className="h1" style={{ color: "#485785" }}>
             Neumorphism
           </h1>
@@ -25,6 +34,21 @@ const NeumorphismSection = () => {
 
         <section>
           <AnimatePresence>
+            
+          {showImage && (
+          <div
+            className="overlay-image"
+            onClick={toggleImage} // Clicking the image will also close it
+          >
+            <img
+              src="/images/googleNeuomorphism.png"
+              alt="Skeuomorphism Google"
+              className="img-fluid"
+            />
+          </div>
+        )}
+            
+            
             {isVisible && ( 
               <motion.div className="card border-primary mb-3" 
               initial={{ opacity: 0, y: -20 }} // Starting state
@@ -35,12 +59,12 @@ const NeumorphismSection = () => {
                 <div className="card-header">Background</div>
                 <div className="card-body">
                   <p className="card-text">
-                    Early web design in the 1990s was simple and text-based, with static HTML 
-                    pages and minimal graphics due to slow internet speeds. <br/>
-                    Layouts relied on tables, fonts were limited to system defaults, and bright 
-                    colors or animated GIFs were common. Cross-browser compatibility <br/>
-                    was a challenge during the "browser wars," and the introduction of 
-                    CSS in the mid-1990s began improving design flexibility. This era set the stage for modern web development.
+                  Neumorphism is basically “New Skeuomorphism” (skeumorphism with a modern twist). <br />
+                  It’s got a bit of a “soft” look and feel that reminds a bit of flat design. <br />
+                  Even though it relates to skeuomorphism, there is a new focus in the entire UI design style with
+                  neumorphism. <br /> 
+                  This focus is not necessarily on the contrast or similarity between the real and
+                  digital worlds, but rather the color palette.
                   </p>
                 </div>
               </motion.div> 
@@ -77,20 +101,21 @@ const NeumorphismSection = () => {
                       </div>
                       <div className="modal-body">
                         <p>
-                          World’s first website was created By Tim Berners-Lee on August 6, 1991 and is still online.
-                          Although its not much by todays standards, its the grandparent of all websites ever.
+                        As a trend, neumorphism is said to have been kicked off by one particular Dribbble shot that went viral. 
+                        The designer behind it encouraged fellow designers to “Imagine that we live in a dimension where skeuomorph is still alive 
+                        and has continued its evolution in mobile interfaces. What would applications look like then? Here is my vision.”
                         </p>
                       </div>
-                      <div className="modal-footer">
+                      {/* <div className="modal-footer">
                         
-                        {/* <button
+                        { <button
                           type="button"
                           className="btn btn-secondary"
                           onClick={toggleModal}
                         >
                           Close
-                        </button> */}
-                      </div>
+                        </button> }
+                      </div> */}
                     </div>
                   </div>
                 </div>

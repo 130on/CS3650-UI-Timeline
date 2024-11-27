@@ -5,13 +5,19 @@ import React, {useState} from "react";
 import { motion, AnimatePresence } from "motion/react";
 
 const DarkModeSection = () => {
-  // State to manage visibility of the paragraph and modal
+  // State to manage visibility of the paragraph
   const [isVisible, setIsVisible] = useState(false);
+  // State to toggle image visibility
+  const [showImage, setShowImage] = useState(false); 
+  // State to toggle fun fact modal visibility
   const [showModal, setShowModal] = useState(false);
 
-  // Function to toggle the paragraph and modal visibility
+  // Function to toggle the paragraph visibility
   const toggleParagraph = () => setIsVisible(!isVisible);
+  // Function to toggle the modal visibility
   const toggleModal = () => setShowModal(!showModal);
+  // Function to toggle the image visibility
+  const toggleImage = () => setShowImage(!showImage);
 
   return (
     <ScopedWrapper classes={classes}>
@@ -21,12 +27,29 @@ const DarkModeSection = () => {
         timelineColor="#ffffff"
       >
         <div id="dark-mode" className="container py-4">
+        <button className="google-btn google-button" onClick={toggleImage}>
+            {showImage ? "Ungoogle it" : "Google it"}
+          </button>
           <h1 className="h1 text-white">Dark Mode</h1>
           <button className="btn btn-primary" onClick={toggleParagraph}> {isVisible ? "Hide" : "Show"} Background</button>
         </div>
 
         <section>
           <AnimatePresence>
+            
+          {showImage && (
+          <div
+            className="overlay-image"
+            onClick={toggleImage} // Clicking the image will also close it
+          >
+            <img
+              src="/images/googleDark.jpg"
+              alt="Skeuomorphism Google"
+              className="img-fluid"
+            />
+          </div>
+        )}
+            
             {isVisible && ( 
               <motion.div className="card border-primary mb-3" 
               initial={{ opacity: 0, y: -20 }} // Starting state
@@ -37,12 +60,10 @@ const DarkModeSection = () => {
                 <div className="card-header text-white">Background</div>
                 <div className="card-body">
                   <p className="card-text text-white">
-                    Early web design in the 1990s was simple and text-based, with static HTML 
-                    pages and minimal graphics due to slow internet speeds. <br/>
-                    Layouts relied on tables, fonts were limited to system defaults, and bright 
-                    colors or animated GIFs were common. Cross-browser compatibility <br/>
-                    was a challenge during the "browser wars," and the introduction of 
-                    CSS in the mid-1990s began improving design flexibility. This era set the stage for modern web development.
+                  Dark mode is a feature that changes the color scheme of an application or website from light to dark. <br />
+                  It's a popular option for those who prefer a less bright and more subdued interface. <br />
+                  With dark mode, the background is typically black or dark gray, and the text and icons are white or light. <br /> 
+                  This can reduce eye strain, especially in low-light environments. Additionally, some people find it more aesthetically pleasing and easier to read.
                   </p>
                 </div>
               </motion.div> 
@@ -79,20 +100,22 @@ const DarkModeSection = () => {
                       </div>
                       <div className="modal-body">
                         <p className="text-white">
-                          World’s first website was created By Tim Berners-Lee on August 6, 1991 and is still online.
-                          Although its not much by todays standards, its the grandparent of all websites ever.
+                        Dark mode can significantly save battery life on devices. <br />
+                        This is because OLED screens can turn off individual pixels displaying pure black, 
+                        meaning when you use dark mode on an OLED screen, the black pixels essentially "turn off" and consume no power, <br />
+                        leading to increased battery efficiency
                         </p>
                       </div>
-                      <div className="modal-footer">
+                      {/* <div className="modal-footer">
                         
-                        {/* <button
+                        { <button
                           type="button"
                           className="btn btn-secondary"
                           onClick={toggleModal}
                         >
                           Close
-                        </button> */}
-                      </div>
+                        </button> }
+                      </div> */}
                     </div>
                   </div>
                 </div>

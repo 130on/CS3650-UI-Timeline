@@ -7,22 +7,47 @@ import { motion, AnimatePresence } from "motion/react";
 const EarlyWebSection = () => {
   // State to manage visibility of the paragraph and modal
   const [isVisible, setIsVisible] = useState(false);
+  // State to toggle fun fact modal visibility
   const [showModal, setShowModal] = useState(false);
-
+  // State to toggle image visibility
+  const [showImage, setShowImage] = useState(false); 
+  
   // Function to toggle the paragraph and modal visibility
   const toggleParagraph = () => setIsVisible(!isVisible);
+  // Function to toggle the modal visibility
   const toggleModal = () => setShowModal(!showModal);
+  // Function to toggle the image visibility
+  const toggleImage = () => setShowImage(!showImage);
 
   return (
     <ScopedWrapper classes={classes}>
       <ParallaxSection date="1990s" bgColor="#ffffff" timelineColor="#000000">
         <div id="early-web" className="container py-4">
+        <button className="google-btn google-button" onClick={toggleImage}>
+            {showImage ? "Ungoogle it" : "Google it"}
+          </button>
           <h1>EarlyWeb</h1>
           <button className="btn btn-primary" onClick={toggleParagraph}> {isVisible ? "Hide" : "Show"} Background</button>
+
         </div>
 
         <section>
           <AnimatePresence>
+
+            {/* Conditional rendering of the image */}
+            {showImage && (
+          <div
+            className="overlay-image"
+            onClick={toggleImage} // Clicking the image will also close it
+          >
+            <img
+              src="/images/googleEarlyweb.png"
+              alt="Skeuomorphism Google"
+              className="img-fluid"
+            />
+          </div>
+        )}
+
             {isVisible && ( 
               <motion.div className="card border-primary mb-3" 
               initial={{ opacity: 0, y: -20 }} // Starting state
@@ -34,11 +59,11 @@ const EarlyWebSection = () => {
                 <div className="card-body">
                   <p className="card-text">
                     Early web design in the 1990s was simple and text-based, with static HTML 
-                    pages and minimal graphics due to slow internet speeds. <br/>
+                    pages and minimal graphics due to slow internet speeds. <br />
                     Layouts relied on tables, fonts were limited to system defaults, and bright 
-                    colors or animated GIFs were common. Cross-browser compatibility <br/>
+                    colors or animated GIFs were common. <br /> Cross-browser compatibility 
                     was a challenge during the "browser wars," and the introduction of 
-                    CSS in the mid-1990s began improving design flexibility. This era set the stage for modern web development.
+                    CSS in the mid-1990s began improving design flexibility. <br />This era set the stage for modern web development.
                   </p>
                 </div>
               </motion.div> 
@@ -77,18 +102,20 @@ const EarlyWebSection = () => {
                         <p>
                           World’s first website was created By Tim Berners-Lee on August 6, 1991 and is still online.
                           Although its not much by todays standards, its the grandparent of all websites ever.
+                           
                         </p>
+                        <a href="https://line-mode.cern.ch/www/hypertext/WWW/TheProject.html" target="_blank">Check it out!</a>
                       </div>
-                      <div className="modal-footer">
+                      {/* <div className="modal-footer">
                         
-                        {/* <button
+                        { <button
                           type="button"
                           className="btn btn-secondary"
                           onClick={toggleModal}
                         >
                           Close
-                        </button> */}
-                      </div>
+                        </button> }
+                      </div> */}
                     </div>
                   </div>
                 </div>
