@@ -25,8 +25,11 @@ const DarkModeSection = () => {
         date="2010s - Present"
         bgColor="#222222"
         timelineColor="#ffffff"
+        id="dark-mode"
+        prevId="flat-design"
+        nextId="neumorphism"
       >
-        <div id="dark-mode" className="container py-4">
+        <div className="container py-4">
         <button className="google-btn google-button" onClick={toggleImage}>
             {showImage ? "Ungoogle it" : "Google it"}
           </button>

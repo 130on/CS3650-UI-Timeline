@@ -2,13 +2,15 @@ import { motion, useScroll } from "framer-motion";
 import { useRef } from "react";
 import DateMarker from "./DateMarker";
 import TimeLine from "./TimeLine";
+import ArrowKeyNav from "./ArrowKeyNav";
 
-const ParallaxSection = ({ children, date, bgColor, timelineColor }) => {
+const ParallaxSection = ({ id, prevId, nextId, children, date, bgColor, timelineColor }) => {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref });
 
   return (
     <section
+      id={id}
       style={{
         height: "100vh",
         scrollSnapAlign: "start",
@@ -35,6 +37,7 @@ const ParallaxSection = ({ children, date, bgColor, timelineColor }) => {
       >
         {children}
       </motion.div>
+      <ArrowKeyNav prevId={prevId} nextId={nextId} color={timelineColor} />
     </section>
   );
 };

@@ -27,9 +27,13 @@ const SkeuomorphismSection = () => {
       <ParallaxSection
         date="2007 - 2013"
         bgColor="#ffffff"
-        timelineColor="#000000">
+        timelineColor="#000000"
+        id="skeuomorphism"
+        prevId="early-web"
+        nextId="flat-design"
+      >
 
-        <div id="skeuomorphism" className="container py-4">
+        <div className="container py-4">
           <button className="google-btn google-button" onClick={toggleImage}>
             {showImage ? "Ungoogle it" : "Google it"}
           </button>

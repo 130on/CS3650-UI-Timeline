@@ -21,13 +21,19 @@ const EarlyWebSection = () => {
 
   return (
     <ScopedWrapper classes={classes}>
-      <ParallaxSection date="1990s" bgColor="#ffffff" timelineColor="#000000">
-        <div id="early-web" className="container py-4">
+      <ParallaxSection 
+        date="1990s" 
+        bgColor="#ffffff" 
+        timelineColor="#000000"
+        id="early-web"
+        nextId="skeuomorphism"
+      >
+        <div className="container py-4">
         <button className="google-btn google-button" onClick={toggleImage}>
             {showImage ? "Ungoogle it" : "Google it"}
           </button>
-          <h1>EarlyWeb</h1>
-          <button className="btn btn-primary" onClick={toggleParagraph}> {isVisible ? "Hide" : "Show"} Background</button>
+          <h1 style={{ fontFamily: "Times New Roman" }}>EarlyWeb</h1>
+          <button className="" onClick={toggleParagraph}> {isVisible ? "Hide" : "Show"} Background</button>
 
         </div>
 
@@ -72,7 +78,7 @@ const EarlyWebSection = () => {
           </section>
 
           <section>
-            <button className="btn btn-info" onClick={toggleModal}>
+            <button className="" onClick={toggleModal}>
                 Fun Fact
             </button>
 

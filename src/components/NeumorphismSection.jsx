@@ -21,8 +21,14 @@ const NeumorphismSection = () => {
 
   return (
     <ScopedWrapper classes={classes}>
-      <ParallaxSection date="2020s" bgColor="#D9E3F1" timelineColor="#485785">
-        <div id="neumorphism" className="container py-4">
+      <ParallaxSection 
+        date="2020s" 
+        bgColor="#D9E3F1" 
+        timelineColor="#485785"
+        id="neumorphism"
+        prevId="dark-mode"
+      >
+        <div className="container py-4">
         <button className="google-btn google-button" onClick={toggleImage}>
             {showImage ? "Ungoogle it" : "Google it"}
           </button>

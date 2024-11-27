@@ -25,8 +25,11 @@ const FlatDesignSection = () => {
         date="2013 - 2017"
         bgColor="#ffffff"
         timelineColor="#000000"
+        id="flat-design"
+        prevId="skeuomorphism"
+        nextId="dark-mode"
       >
-        <div id="flat-design" className="container py-4">
+        <div className="container py-4">
         <button className="google-btn google-button" onClick={toggleImage}>
             {showImage ? "Ungoogle it" : "Google it"}
           </button>
