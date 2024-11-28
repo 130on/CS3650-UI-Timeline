@@ -5,7 +5,7 @@ import { Link } from "react-scroll";
 const Navbar = () => {
   return (
     <ScopedWrapper classes={classes}>
-      <nav className="navbar container-fluid fixed-top navbar-expand-lg fs-4 shadow mx-5 bg-light">
+      <nav className="navbar container-fluid fixed-top navbar-expand-lg fs-4">
         <div className="container-fluid">
           <h1 className="navbar-brand fs-3 fw-bold mx-5">UI Timeline</h1>
           <button
