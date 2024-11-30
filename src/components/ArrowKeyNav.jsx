@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
 import { Link } from "react-scroll";
 
-const ArrowKeyNav = ({ color, prevId = "", nextId = "" }) => {
+const ArrowKeyNav = ({ color, prevId = "", nextId = "", fontFamily }) => {
     return (
         <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 1 }}
+            transition={{ duration: 1, delay: 2 }}
             viewport={{ once: false }}
             style={{
                 position: "absolute",
@@ -40,6 +40,7 @@ const ArrowKeyNav = ({ color, prevId = "", nextId = "" }) => {
                     color: color, // Matches the arrow color
                     fontSize: "16px", // Adjust size of text
                     marginTop: "10px", // Adjusts the vertical spacing between the arrows and text
+                    fontFamily: fontFamily,
                 }}
             >
                 Use the arrow keys or buttons to navigate the sections

@@ -19,12 +19,18 @@ const EarlyWebSection = () => {
   // Function to toggle the image visibility
   const toggleImage = () => setShowImage(!showImage);
 
+  const DATE = "1990s";
+  const BG_COLOR = "#ffffff";
+  const ACCENT_COLOR = "#000000";
+  const FONT_FAMILY = "Times New Roman, Times, serif";
+
   return (
     <ScopedWrapper classes={classes}>
       <ParallaxSection 
-        date="1990s" 
-        bgColor="#ffffff" 
-        timelineColor="#000000"
+        date={DATE} 
+        bgColor={BG_COLOR}
+        accentColor={ACCENT_COLOR}
+        fontFamily={FONT_FAMILY}
         id="early-web"
         nextId="skeuomorphism"
       >
@@ -32,8 +38,8 @@ const EarlyWebSection = () => {
         <button className="google-btn google-button" onClick={toggleImage}>
             {showImage ? "Ungoogle it" : "Google it"}
           </button>
-          <h1 style={{ fontFamily: "Times New Roman" }}>EarlyWeb</h1>
-          <button className="" onClick={toggleParagraph}> {isVisible ? "Hide" : "Show"} Background</button>
+          <h1 style={{ color: ACCENT_COLOR, fontFamily: FONT_FAMILY }}>EarlyWeb</h1>
+          <button onClick={toggleParagraph}> {isVisible ? "Hide" : "Show"} Background</button>
 
         </div>
 

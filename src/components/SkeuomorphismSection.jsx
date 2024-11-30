@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import '../App.css';
-
 import classes from "../assets/skeuomorphism.module.css";
 import ScopedWrapper from "../utils/ScopedWrapper";
 import ParallaxSection from "./ParallaxSection";
@@ -22,12 +21,18 @@ const SkeuomorphismSection = () => {
   // Function to toggle the image visibility
   const toggleImage = () => setShowImage(!showImage);
 
+  const DATE = "2007 - 2013";
+  const BG_COLOR = "#ffffff";
+  const ACCENT_COLOR = "#2FA4E7";
+  const FONT_FAMILY = "system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', 'Liberation Sans', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'";
+
   return (
     <ScopedWrapper classes={classes}>
       <ParallaxSection
-        date="2007 - 2013"
-        bgColor="#ffffff"
-        timelineColor="#000000"
+        date={DATE}
+        bgColor={BG_COLOR}
+        accentColor={ACCENT_COLOR}
+        fontFamily={FONT_FAMILY}
         id="skeuomorphism"
         prevId="early-web"
         nextId="flat-design"
@@ -37,7 +42,7 @@ const SkeuomorphismSection = () => {
           <button className="google-btn google-button" onClick={toggleImage}>
             {showImage ? "Ungoogle it" : "Google it"}
           </button>
-          <h1 className="h1">Skeuomorphism</h1>
+          <h1 className="h1" style={{ color: ACCENT_COLOR, fontFamily: FONT_FAMILY }}>Skeuomorphism</h1>
           <button className="btn btn-primary" onClick={toggleParagraph}> {isVisible ? "Hide" : "Show"} Background</button>
 
         </div>

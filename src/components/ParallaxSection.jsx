@@ -1,10 +1,12 @@
 import { motion, useScroll } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import DateMarker from "./DateMarker";
 import TimeLine from "./TimeLine";
 import ArrowKeyNav from "./ArrowKeyNav";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
 
-const ParallaxSection = ({ id, prevId, nextId, children, date, bgColor, timelineColor }) => {
+const ParallaxSection = ({ id, prevId, nextId, children, date, bgColor, accentColor, fontFamily }) => {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref });
 
@@ -18,14 +20,17 @@ const ParallaxSection = ({ id, prevId, nextId, children, date, bgColor, timeline
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        backgroundColor: bgColor, // Dynamic background color
+        backgroundColor: bgColor,
       }}
     >
-      <TimeLine color={timelineColor} />
+
+      <Navbar color={accentColor} fontFamily={fontFamily} />
+      <TimeLine color={accentColor} />
       <DateMarker
         date={date}
         scrollYProgress={scrollYProgress}
-        color={timelineColor}
+        color={accentColor}
+        fontFamily={fontFamily}
       />
       <motion.div
         ref={ref}
@@ -37,7 +42,8 @@ const ParallaxSection = ({ id, prevId, nextId, children, date, bgColor, timeline
       >
         {children}
       </motion.div>
-      <ArrowKeyNav prevId={prevId} nextId={nextId} color={timelineColor} />
+      <ArrowKeyNav prevId={prevId} nextId={nextId} color={accentColor} fontFamily={fontFamily} />
+      <Footer color={accentColor} fontFamily={fontFamily} />
     </section>
   );
 };

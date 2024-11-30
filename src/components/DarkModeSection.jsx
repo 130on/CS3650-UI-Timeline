@@ -19,12 +19,18 @@ const DarkModeSection = () => {
   // Function to toggle the image visibility
   const toggleImage = () => setShowImage(!showImage);
 
+  const DATE = "2010s - Present";
+  const BG_COLOR = "#222222";
+  const ACCENT_COLOR = "#ffffff";
+  const FONT_FAMILY = "Lato, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'";
+
   return (
     <ScopedWrapper classes={classes}>
       <ParallaxSection
-        date="2010s - Present"
-        bgColor="#222222"
-        timelineColor="#ffffff"
+        date={DATE}
+        bgColor={BG_COLOR}
+        accentColor={ACCENT_COLOR}
+        fontFamily={FONT_FAMILY}
         id="dark-mode"
         prevId="flat-design"
         nextId="neumorphism"
@@ -33,7 +39,7 @@ const DarkModeSection = () => {
         <button className="google-btn google-button" onClick={toggleImage}>
             {showImage ? "Ungoogle it" : "Google it"}
           </button>
-          <h1 className="h1 text-white">Dark Mode</h1>
+          <h1 className="h1" style={{ color: ACCENT_COLOR, fontFamily: FONT_FAMILY }}>Dark Mode</h1>
           <button className="btn btn-primary" onClick={toggleParagraph}> {isVisible ? "Hide" : "Show"} Background</button>
         </div>
 

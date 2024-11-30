@@ -27,8 +27,7 @@ ul > li {
 
 }
 
-.fotterFloat {
-  position: fixed; 
+.footerFloat {
   bottom: 0; 
   left: 0; 
   width: 100%; 
@@ -37,7 +36,6 @@ ul > li {
   color: #000; 
   padding: 10px; 
   z-index: 1000; 
-  font-size: 14px; 
 }
 /* The google overlay image styles */
 .overlay-image {

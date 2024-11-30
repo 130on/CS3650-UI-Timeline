@@ -19,12 +19,18 @@ const NeumorphismSection = () => {
   // Function to toggle the image visibility
   const toggleImage = () => setShowImage(!showImage);
 
+  const DATE = "2020s";
+  const BG_COLOR = "#D9E3F1";
+  const ACCENT_COLOR = "#485785";
+  const FONT_FAMILY = "Nunito, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'";
+
   return (
     <ScopedWrapper classes={classes}>
       <ParallaxSection 
-        date="2020s" 
-        bgColor="#D9E3F1" 
-        timelineColor="#485785"
+        date={DATE} 
+        bgColor={BG_COLOR} 
+        accentColor={ACCENT_COLOR}
+        fontFamily={FONT_FAMILY}
         id="neumorphism"
         prevId="dark-mode"
       >
@@ -32,9 +38,7 @@ const NeumorphismSection = () => {
         <button className="google-btn google-button" onClick={toggleImage}>
             {showImage ? "Ungoogle it" : "Google it"}
           </button>
-          <h1 className="h1" style={{ color: "#485785" }}>
-            Neumorphism
-          </h1>
+          <h1 className="h1" style={{ color: ACCENT_COLOR, fontFamily: FONT_FAMILY }}>Neumorphism</h1>
           <button className="btn btn-primary" onClick={toggleParagraph}> {isVisible ? "Hide" : "Show"} Background</button>
         </div>
 

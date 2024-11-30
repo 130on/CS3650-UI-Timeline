@@ -18,13 +18,19 @@ const FlatDesignSection = () => {
   const toggleModal = () => setShowModal(!showModal);
   // Function to toggle the image visibility
   const toggleImage = () => setShowImage(!showImage);
+
+  const DATE = "2013 - 2017";
+  const BG_COLOR = "#ffffff";
+  const ACCENT_COLOR = "#212529";
+  const FONT_FAMILY = "Lato, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'";
   
   return (
     <ScopedWrapper classes={classes}>
       <ParallaxSection
-        date="2013 - 2017"
-        bgColor="#ffffff"
-        timelineColor="#000000"
+        date={DATE}
+        bgColor={BG_COLOR}
+        accentColor={ACCENT_COLOR}
+        fontFamily={FONT_FAMILY}
         id="flat-design"
         prevId="skeuomorphism"
         nextId="dark-mode"
@@ -33,7 +39,7 @@ const FlatDesignSection = () => {
         <button className="google-btn google-button" onClick={toggleImage}>
             {showImage ? "Ungoogle it" : "Google it"}
           </button>
-          <h1 className="h1">Flat Design</h1>
+          <h1 className="h1" style={{ color: ACCENT_COLOR, fontFamily: FONT_FAMILY }}>Flat Design</h1>
           <button className="btn btn-primary" onClick={toggleParagraph}> {isVisible ? "Hide" : "Show"} Background</button>
         </div>
 

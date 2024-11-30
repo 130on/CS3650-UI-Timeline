@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useParallax } from "../hooks/useParallax";
 
-const DateMarker = ({ date, scrollYProgress, color }) => {
+const DateMarker = ({ date, scrollYProgress, color, fontFamily }) => {
   const y = useParallax(scrollYProgress, 500);
 
   return (
@@ -33,6 +33,7 @@ const DateMarker = ({ date, scrollYProgress, color }) => {
           fontWeight: "bold",
           whiteSpace: "nowrap",
           color: color,
+          fontFamily: fontFamily,
           y, // Apply parallax effect to the date
         }}
       >
