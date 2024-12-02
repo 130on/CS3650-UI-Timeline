@@ -1,7 +1,7 @@
 import classes from "../assets/neumorphism.module.css";
 import ScopedWrapper from "../utils/ScopedWrapper";
 import ParallaxSection from "./ParallaxSection";
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 
 const NeumorphismSection = () => {
@@ -14,68 +14,84 @@ const NeumorphismSection = () => {
   const DATE = "2020s";
   const BG_COLOR = "#D9E3F1";
   const ACCENT_COLOR = "#485785";
-  const FONT_FAMILY = "Nunito, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'";
+  const FONT_FAMILY =
+    "Nunito, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'";
 
   return (
     <ScopedWrapper classes={classes}>
-      <ParallaxSection 
-        date={DATE} 
-        bgColor={BG_COLOR} 
+      <ParallaxSection
+        date={DATE}
+        bgColor={BG_COLOR}
         accentColor={ACCENT_COLOR}
         fontFamily={FONT_FAMILY}
         id="neumorphism"
         prevId="dark-mode"
       >
-
-        {!isVisible && ( 
+        {!isVisible && (
           <motion.div
             initial={{ opacity: 0, y: -20 }} // Starting state
             animate={{ opacity: 1, y: 0 }} // Ending state
             exit={{ opacity: 0, y: -20 }} // Exit state (if needed)
             transition={{ duration: 0.5, ease: "easeOut" }} // Smooth transition
-            >
+          >
             <div className="container py-4">
-              <h1 className="h1" style={{ color: ACCENT_COLOR, fontFamily: FONT_FAMILY }}>Neumorphism</h1>
-              <button className="btn btn-primary" onClick={toggleParagraph}> {isVisible ? "Hide" : "Show"} Background</button>
+              <h1
+                className="h1"
+                style={{ color: ACCENT_COLOR, fontFamily: FONT_FAMILY }}
+              >
+                Neumorphism
+              </h1>
+              <button className="btn btn-primary" onClick={toggleParagraph}>
+                {" "}
+                {isVisible ? "Hide" : "Show"} Background
+              </button>
             </div>
           </motion.div>
         )}
 
         <section>
           <AnimatePresence>
-            {isVisible && ( 
-              <motion.div 
-              className="container py-4"
-              initial={{ opacity: 0, y: -20 }} // Starting state
-              animate={{ opacity: 1, y: 0 }} // Ending state
-              exit={{ opacity: 0, y: -20 }} // Exit state (if needed)
-              transition={{ duration: 0.5, ease: "easeOut" }} // Smooth transition
+            {isVisible && (
+              <motion.div
+                className="container py-4"
+                initial={{ opacity: 0, y: -20 }} // Starting state
+                animate={{ opacity: 1, y: 0 }} // Ending state
+                exit={{ opacity: 0, y: -20 }} // Exit state (if needed)
+                transition={{ duration: 0.5, ease: "easeOut" }} // Smooth transition
               >
-                <div>
+                <div style={{ color: ACCENT_COLOR, fontFamily: FONT_FAMILY }}>
                   <p>
-                  Neumorphism is basically “New Skeuomorphism” (skeumorphism with a modern twist). <br />
-                  It’s got a bit of a “soft” look and feel that reminds a bit of flat design. <br />
-                  Even though it relates to skeuomorphism, there is a new focus in the entire UI design style with
-                  neumorphism. <br /> 
-                  This focus is not necessarily on the contrast or similarity between the real and
-                  digital worlds, but rather the color palette.
-                  </p>
-                </div>
-                
-                <div>
-                  <p>
-                    As a trend, neumorphism is said to have been kicked off by one particular Dribbble shot that went viral. 
-                    The designer behind it encouraged fellow designers to “Imagine that we live in a dimension where skeuomorph is still alive 
-                    and has continued its evolution in mobile interfaces. What would applications look like then? Here is my vision.”
+                    Neumorphism is basically “New Skeuomorphism” (skeumorphism
+                    with a modern twist). <br />
+                    It’s got a bit of a “soft” look and feel that reminds a bit
+                    of flat design. <br />
+                    Even though it relates to skeuomorphism, there is a new
+                    focus in the entire UI design style with neumorphism. <br />
+                    This focus is not necessarily on the contrast or similarity
+                    between the real and digital worlds, but rather the color
+                    palette.
                   </p>
                 </div>
 
-                
-                <button className="btn btn-primary" onClick={toggleParagraph}> {isVisible ? "Hide" : "Show"} Background</button>
-              </motion.div> 
+                <div style={{ color: ACCENT_COLOR, fontFamily: FONT_FAMILY }}>
+                  <p>
+                    As a trend, neumorphism is said to have been kicked off by
+                    one particular Dribbble shot that went viral. The designer
+                    behind it encouraged fellow designers to “Imagine that we
+                    live in a dimension where skeuomorph is still alive and has
+                    continued its evolution in mobile interfaces. What would
+                    applications look like then? Here is my vision.”
+                  </p>
+                </div>
+
+                <button className="btn btn-primary" onClick={toggleParagraph}>
+                  {" "}
+                  {isVisible ? "Hide" : "Show"} Background
+                </button>
+              </motion.div>
             )}
-            </AnimatePresence>
-          </section>
+          </AnimatePresence>
+        </section>
       </ParallaxSection>
     </ScopedWrapper>
   );

@@ -1,7 +1,7 @@
 import classes from "../assets/flatdesign.module.css";
 import ScopedWrapper from "../utils/ScopedWrapper";
 import ParallaxSection from "./ParallaxSection";
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 
 const FlatDesignSection = () => {
@@ -14,8 +14,9 @@ const FlatDesignSection = () => {
   const DATE = "2013 - 2017";
   const BG_COLOR = "#ffffff";
   const ACCENT_COLOR = "#212529";
-  const FONT_FAMILY = "Lato, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'";
-  
+  const FONT_FAMILY =
+    "Lato, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'";
+
   return (
     <ScopedWrapper classes={classes}>
       <ParallaxSection
@@ -27,55 +28,71 @@ const FlatDesignSection = () => {
         prevId="skeuomorphism"
         nextId="dark-mode"
       >
-
         {!isVisible && (
           <motion.div
-          initial={{ opacity: 0, y: -20 }} // Starting state
-          animate={{ opacity: 1, y: 0 }} // Ending state
-          exit={{ opacity: 0, y: -20 }} // Exit state (if needed)
-          transition={{ duration: 0.5, ease: "easeOut" }} // Smooth transition
+            initial={{ opacity: 0, y: -20 }} // Starting state
+            animate={{ opacity: 1, y: 0 }} // Ending state
+            exit={{ opacity: 0, y: -20 }} // Exit state (if needed)
+            transition={{ duration: 0.5, ease: "easeOut" }} // Smooth transition
           >
             <div className="container py-4">
-              <h1 className="h1" style={{ color: ACCENT_COLOR, fontFamily: FONT_FAMILY }}>Flat Design</h1>
-              <button className="btn btn-primary" onClick={toggleParagraph}> {isVisible ? "Hide" : "Show"} Background</button>
+              <h1
+                className="h1"
+                style={{ color: ACCENT_COLOR, fontFamily: FONT_FAMILY }}
+              >
+                Flat Design
+              </h1>
+              <button className="btn btn-primary" onClick={toggleParagraph}>
+                {" "}
+                {isVisible ? "Hide" : "Show"} Background
+              </button>
             </div>
           </motion.div>
         )}
 
         <section>
           <AnimatePresence>
-            
-            {isVisible && ( 
-              <motion.div 
-              className="container py-4"
-              initial={{ opacity: 0, y: -20 }} // Starting state
-              animate={{ opacity: 1, y: 0 }} // Ending state
-              exit={{ opacity: 0, y: -20 }} // Exit state (if needed)
-              transition={{ duration: 0.5, ease: "easeOut" }} // Smooth transition
+            {isVisible && (
+              <motion.div
+                className="container py-4"
+                initial={{ opacity: 0, y: -20 }} // Starting state
+                animate={{ opacity: 1, y: 0 }} // Ending state
+                exit={{ opacity: 0, y: -20 }} // Exit state (if needed)
+                transition={{ duration: 0.5, ease: "easeOut" }} // Smooth transition
               >
-                <div>
+                <div style={{ color: ACCENT_COLOR, fontFamily: FONT_FAMILY }}>
                   <p>
-                  Flat design is a style of interface design that rejects the 3D elemenes of skeuomorphism. <br />
-                  It does not abandon in but rather focuses on rendering objects in flat minimalist form. <br />
-                  It avoids the excessive use of gradients, textures, and drop shadows <br />
-                  designed to deliver 3D effects for simpler elements focusing on simple flat elements, typography and glat color schemes. 
+                    Flat design is a style of interface design that rejects the
+                    3D elemenes of skeuomorphism. <br />
+                    It does not abandon in but rather focuses on rendering
+                    objects in flat minimalist form. <br />
+                    It avoids the excessive use of gradients, textures, and drop
+                    shadows <br />
+                    designed to deliver 3D effects for simpler elements focusing
+                    on simple flat elements, typography and glat color schemes.
                   </p>
                 </div>
 
-                <div>
-                <p>
-                Microsoft’s ill-fated Zune MP3 player which was launched back in 2006, is a good example of early digital flat design.
-                </p>
-                <img src="../../public/images/Zune.png" alt="zune mp3 player" />
+                <div style={{ color: ACCENT_COLOR, fontFamily: FONT_FAMILY }}>
+                  <p>
+                    Microsoft’s ill-fated Zune MP3 player which was launched
+                    back in 2006, is a good example of early digital flat
+                    design.
+                  </p>
+                  <img
+                    src="../../public/images/Zune.png"
+                    alt="zune mp3 player"
+                  />
                 </div>
-                
-                <button className="btn btn-primary" onClick={toggleParagraph}> {isVisible ? "Hide" : "Show"} Background</button>
-              </motion.div> 
-            )}
-            </AnimatePresence>
-          </section>
 
-          
+                <button className="btn btn-primary" onClick={toggleParagraph}>
+                  {" "}
+                  {isVisible ? "Hide" : "Show"} Background
+                </button>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </section>
       </ParallaxSection>
     </ScopedWrapper>
   );
