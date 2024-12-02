@@ -50,6 +50,12 @@ const DarkModeSection = () => {
               >
                 Dark Mode
               </h1>
+              <h2
+                style={{ color: ACCENT_COLOR, fontFamily: FONT_FAMILY }}
+                className="fs-4 mb-4"
+              >
+                Simple and readable
+              </h2>
               <button className="btn btn-primary" onClick={toggleParagraph}>
                 {" "}
                 {isVisible ? "Hide" : "Show"} Background

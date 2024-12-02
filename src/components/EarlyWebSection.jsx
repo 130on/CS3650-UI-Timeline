@@ -37,6 +37,12 @@ const EarlyWebSection = () => {
               <h1 style={{ color: ACCENT_COLOR, fontFamily: FONT_FAMILY }}>
                 EarlyWeb
               </h1>
+              <h2
+                style={{ color: ACCENT_COLOR, fontFamily: FONT_FAMILY }}
+                className="fs-4 mb-4"
+              >
+                Raw HTML styling
+              </h2>
               <button onClick={toggleParagraph}>
                 {" "}
                 {isVisible ? "Hide" : "Show"} Background
