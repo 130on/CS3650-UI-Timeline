@@ -1,4 +1,14 @@
 const FunFactSpeechBubble = ({ children, accentColor, fontFamily }) => {
+
+    let quoteColor;
+    if (accentColor === "#ffffff") {
+        quoteColor = "#222222";
+    } else if (accentColor === "#485785") {
+        quoteColor = "#D9E3F1";
+    } else {
+        quoteColor = "white";
+    }
+
     return (
         <div
             style={{
@@ -18,16 +28,27 @@ const FunFactSpeechBubble = ({ children, accentColor, fontFamily }) => {
                 {children}
             </p>
             <div
-            style={{
-                width: 0,
-                height: 0,
-                position: "absolute",
-                bottom: "-20px",
-                right: "40px",
-                borderTop: `20px solid ${accentColor}`,
-                borderRight: "20px solid transparent",
-            }}
-            ></div>
+                style={{
+                    width: 0,
+                    height: 0,
+                    position: "absolute",
+                    bottom: "-20px",
+                    right: "40px",
+                    borderTop: `20px solid ${accentColor}`,
+                    borderRight: "28px solid transparent",
+                }}
+            />
+            <div
+                style={{
+                    width: 0,
+                    height: 0,
+                    position: "absolute",
+                    bottom: "-14px",
+                    right: "44px",
+                    borderTop: `15px solid ${quoteColor}`,
+                    borderRight: "20px solid transparent",
+                }}
+            />
         </div>
     );
 }

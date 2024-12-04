@@ -89,7 +89,7 @@ const SkeuomorphismSection = () => {
                   {/* Fun Fact Section */}
                   <div className="float-end">
                     <FunFactSpeechBubble accentColor={ACCENT_COLOR} fontFamily={FONT_FAMILY} >
-                      Skeuowmorphism began to take shape in the 1980s.
+                      Skeuomorphism began to take shape in the 1980s.
                       One of its earliest proponents was Steve Jobs of Apple. The
                       idea was simple; computer interfaces would be much more
                       intuitive to users if skeuomorphic design were applied.
